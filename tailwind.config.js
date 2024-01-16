@@ -16,6 +16,13 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      screens: {
+        'ms': '280px',  // Custom breakpoint for mobile-small
+        'sm': '440px',
+        'md': '668px',
+        'lg': '924px',
+        'xl': '1280px',
+      },
     },
   },
   darkMode: "class",
