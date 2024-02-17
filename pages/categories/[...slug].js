@@ -11,6 +11,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { PushCategoriesToFirebase } from '@/logic/firebaseUtils';
 import { useRouter } from 'next/router';
+import { saveCode } from '@/logic/authenticationUtils';
 
 export default function Categories() {
 
@@ -68,6 +69,8 @@ export default function Categories() {
         // If parsing is successful, update the count state
         setCount(parsedCount);
       }
+
+      saveCode(parsedCount,slug)
     }
 
   }, [count, slug]);
