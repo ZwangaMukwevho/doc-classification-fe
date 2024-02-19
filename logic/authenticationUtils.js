@@ -12,7 +12,7 @@ export function getAuthTokenFromSlugs(slugs){
     return authCode;
 }
 
-export function setAuthCodeLocalStorage(key, code) {
+export function setItemToStorage(key, code) {
     localStorage.setItem(key, code);
 }
 
@@ -20,14 +20,20 @@ export function saveCode(count, slugs) {
     const authCode = getAuthTokenFromSlugs(slugs);
 
     switch(count) {
-        case 2:
-            setAuthCodeLocalStorage('gmail',authCode)
+        case 1:
+            setItemToStorage('gmail',authCode)
             return;
-        case 3:
-            setAuthCodeLocalStorage('gdrive',authCode)
+        case 2:
+            setItemToStorage('gdrive',authCode)
             return
         default:
             return
+    }
+}
+
+export function saveCategoties(count, categories) {
+    if(count == 1) {
+        setItemToStorage('categories',categories);
     }
 }
 
@@ -37,11 +43,15 @@ export function getAuthSourceIndex(url){
     const lastElement = urlArray[urlArray.length-1]
     
     switch(lastElement){
-        case lastElement.includes('gmail'):
-            return 2
-        case lastElement.includes('drive'):
-            return 3
-        default:
+        case 'gmail.readonly':
             return 1
+        case 'drive':
+            return 2
+        default:
+            return 0
     }
+}
+
+export function getAuthCodeFromStorage(source){
+    return localStorage.getItem(source)
 }

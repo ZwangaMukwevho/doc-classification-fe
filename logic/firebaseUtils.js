@@ -3,6 +3,7 @@ import { push, ref, set, getDatabase } from 'firebase/database';
 import Swal from 'sweetalert2';
 import app from '@/config/firebase';
 import withReactContent from 'sweetalert2-react-content';
+import { getAuthCodeFromStorage } from './authenticationUtils';
 
 export const pushDataToFirebase = async (path, data) => {
   try {
@@ -35,4 +36,35 @@ export function PushCategoriesToFirebase(categories) {
             icon: 'error',
           });
       });
+  }
+
+export function PushCategoriesData(categories) {
+    const gdriveUniqueCode = getAuthCodeFromStorage('gmail');
+    const gmailUniqueCode = getAuthCodeFromStorage('gdrive');
+    const uniqueId = generateUniqueId();
+
+    set(ref(database, 'users/categories/' + uniqueId), {
+      categories: categories,
+      gmailCode: gmailUniqueCode,
+      gdriveCode: gdriveUniqueCode,
+    })
+    .then(() => {
+      MySwal.fire({
+          title: 'Submitted!',
+          text: 'You have completed the document classification journey.',
+          icon: 'success',
+        });
+    })
+    .catch((error) => {
+      MySwal.fire({
+          title: 'Failure!',
+          text: 'An error occured while submitting the data.',
+          icon: 'error',
+        });
+    });
+
+}
+
+function generateUniqueId() {
+  return Math.random().toString(36).substr(2, 9);
 }

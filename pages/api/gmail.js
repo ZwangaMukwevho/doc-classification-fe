@@ -2,10 +2,8 @@ import { getAuthSourceIndex } from "@/logic/authenticationUtils";
 import { get } from "firebase/database";
 
 export default async function handler(req, res) {
-  console.log('request: ',req);
   // Extract query parameters from the request URL
   const { code, scope, ...query } = req.query;
-  console.log('scope: ',scope);
   
   // Send a request to localhost:8080 with the extracted query parameters as the body
   try {
@@ -30,6 +28,6 @@ export default async function handler(req, res) {
   // Redirect the page to '/signin'
   const stepIndex = getAuthSourceIndex(scope);
   const redirecturl = '/categories/' +stepIndex+'/' + code;
-  console.log('redirect url: ',redirecturl);
+
   res.redirect(redirecturl);
 }

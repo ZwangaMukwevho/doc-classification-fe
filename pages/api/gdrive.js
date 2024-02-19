@@ -5,7 +5,6 @@ export default async function handler(req, res) {
   
     // Redirect the page to '/signin'
     const redirecturl = '/categories/3/' + code;
-    console.log('redirect url: ',redirecturl);
     res.redirect(redirecturl);
   }
   

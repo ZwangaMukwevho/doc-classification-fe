@@ -9,15 +9,16 @@ import { faCircleLeft } from '@fortawesome/free-regular-svg-icons'
 import { categoriesContext } from '@/logic/context/categoriesContext';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-import { PushCategoriesToFirebase } from '@/logic/firebaseUtils';
+import { PushCategoriesToFirebase, PushCategoriesData } from '@/logic/firebaseUtils';
 import { useRouter } from 'next/router';
-import { saveCode } from '@/logic/authenticationUtils';
+import { saveCategoties, saveCode } from '@/logic/authenticationUtils';
+import { modifyPath } from '@/logic/redirectionUtils';
 
 export default function Categories() {
 
   const router = useRouter();
   const { slug } = router.query;
-  console.log('slugs: ',slug);
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
 
   const MySwal = withReactContent(Swal);
   const [count, setCount] = useState(0);
@@ -47,16 +48,19 @@ export default function Categories() {
 
       if(movement === 'next'){
         setCount(count + 1);
+        router.push(modifyPath(currentUrl,'next'));
       } 
       else if(movement === 'back' && count > 0){
         setCount(count - 1);
+        router.push(modifyPath(currentUrl,'back'));
       }
   };
 
   useEffect(() => {
     if (count === 3) {
       // Trigger SweetAlert when count reaches 3
-      PushCategoriesToFirebase(categories);
+      // PushCategoriesToFirebase(categories);
+      PushCategoriesData(categories)
       setCount(0);
       setCategories(Array(7).fill(''));
     }
@@ -69,7 +73,6 @@ export default function Categories() {
         // If parsing is successful, update the count state
         setCount(parsedCount);
       }
-
       saveCode(parsedCount,slug)
     }
 
