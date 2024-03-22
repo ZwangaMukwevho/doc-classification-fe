@@ -1,15 +1,15 @@
 import React, { useState, useContext } from "react";
 import { categoriesContext } from "@/logic/context/categoriesContext";
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Input} from "@nextui-org/react";
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Input, Textarea} from "@nextui-org/react";
 
 export const CategoriesForm = () => {
 
-  const categoriesNum = [1,2,3,4,5,6,7];
+  const categoriesNum = [1,2,3,4,5,6];
   const { categories, setCategories } = useContext(categoriesContext);
 
-  const handleInputChange = (index, value) => {
+  const handleInputChange = (index, category, value) => {
     const newInputs = [...categories];
-    newInputs[index] = value;
+    newInputs[index][category] = value;
     setCategories(newInputs);
   };
 
@@ -22,17 +22,35 @@ export const CategoriesForm = () => {
           
         {categoriesNum.map((num, index) => (
           <TableRow key={num}>
-            <TableCell>
-              <Input
-                type="email"
-                variant="underlined"
-                label={num}
+          <TableCell>
+            <div className="flex gap-4 items-center">
+              <Textarea
+                type=""
+                variant="bordered"
+                label="Category"
+                labelPlacement="outside"
+                maxRows={4}
+                minRows={4}
                 placeholder=""
-                value={categories[index]}
-                onChange={(e) => handleInputChange(index, e.target.value)}
+                value={categories[index]['category']}
+                onChange={(e) => handleInputChange(index,'category', e.target.value)}
+                className="sm:w-2/5 lg:w-1/5" 
               />
-            </TableCell>
-          </TableRow>
+              <Textarea
+                type="email"
+                variant="bordered"
+                label="Description"
+                placeholder=""
+                labelPlacement="outside"
+                maxRows={4}
+                minRows={4}
+                value={categories[index]['description']}
+                onChange={(e) => handleInputChange(index, 'description', e.target.value)}
+                className="sm:w-3/5 lg:w-4/5" 
+              />
+            </div>
+          </TableCell>
+        </TableRow>
         ))}
 
         </TableBody>

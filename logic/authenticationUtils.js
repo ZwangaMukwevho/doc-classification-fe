@@ -16,14 +16,16 @@ export function setItemToStorage(key, code) {
     localStorage.setItem(key, code);
 }
 
-export function saveCode(count, slugs) {
+export function saveCode(count, slugs, categories) {
     const authCode = getAuthTokenFromSlugs(slugs);
 
     switch(count) {
         case 1:
+            setItemToStorage('categories',categories)
+        case 2:
             setItemToStorage('gmail',authCode)
             return;
-        case 2:
+        case 3:
             setItemToStorage('gdrive',authCode)
             return
         default:
@@ -44,9 +46,9 @@ export function getAuthSourceIndex(url){
     
     switch(lastElement){
         case 'gmail.readonly':
-            return 1
-        case 'drive':
             return 2
+        case 'drive':
+            return 3
         default:
             return 0
     }

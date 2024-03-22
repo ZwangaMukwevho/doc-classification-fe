@@ -9,10 +9,11 @@ import { faCircleLeft } from '@fortawesome/free-regular-svg-icons'
 import { categoriesContext } from '@/logic/context/categoriesContext';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-import { PushCategoriesToFirebase, PushCategoriesData } from '@/logic/firebaseUtils';
+import { PushCategoriesData } from '@/logic/firebaseUtils';
 import { useRouter } from 'next/router';
 import { saveCategoties, saveCode } from '@/logic/authenticationUtils';
 import { modifyPath } from '@/logic/redirectionUtils';
+import { createUserData } from '@/ajax/createUserData';
 
 export default function Categories() {
 
@@ -24,13 +25,13 @@ export default function Categories() {
   const [count, setCount] = useState(0);
   const [categories, setCategories] = useState(
       [
-        'Education',
-        'Finance',
-        'Work',
-        'Personal',
-        'Health',
-        'Home',
-        'Entertainment',
+        {category: 'Education', description: 'This category can include documents related to educational pursuits, such as school transcripts, certificates, course materials, and research papers'},
+        {category: 'Finance', description: 'Finance-related documents can cover a wide range of items, including bank statements, tax records, invoices, quotes, receipts, and investment reports'},
+        {category: 'Work', description: 'Work-related documents can involve project plans, reports, emails, resumes, and other materials directly related to your professional life'},
+        {category: 'Personal', description: 'This category can cover a wide range of personal documents, from family photos to personal notes, travel itineraries, and more. Give your reply as one word answer from the given categories'},
+        {category: 'Health', description: 'Health-related documents can include medical records, insurance claims, prescriptions, and other materials related to your health and well-being'},
+        {category: 'Entertainment', description: 'Entertainment-related documents can include movie tickets, concert programs, and other materials related to your leisure activities'},
+        {category: 'default', description: 'Any other document that does not fit the above should fall in this category'}
       ]
     );
 
@@ -59,9 +60,28 @@ export default function Categories() {
   useEffect(() => {
     if (count === 3) {
       // Trigger SweetAlert when count reaches 3
-      // PushCategoriesToFirebase(categories);
-      PushCategoriesData(categories)
-      setCount(0);
+      createUserData(categories)
+      .then(() => {
+        MySwal.fire({
+          title: 'Submitted!',
+          text: 'You have completed the document classification journey.',
+          icon: 'success',     
+        }).then(() => {
+          // setCount(0);
+          // router.push('/categories/0/null');
+        })
+      })
+      .catch(()=> {
+        MySwal.fire({
+          title: 'Failure!',
+          text: 'An error occured while submitting the data.',
+          icon: 'error',
+        }).then(() => {
+          // setCount(0);
+          // router.push('/categories/0/null');
+        });
+      });
+      
       setCategories(Array(7).fill(''));
     }
 
@@ -73,14 +93,14 @@ export default function Categories() {
         // If parsing is successful, update the count state
         setCount(parsedCount);
       }
-      saveCode(parsedCount,slug)
+      saveCode(parsedCount,slug, categories);
     }
 
   }, [count, slug]);
 
   return (
     <div className="min-h-screen flex flex-col gap-4 items-center justify-center">
-      <div className='w-full h-[600px] flex flex-col gap-4 items-center justify-center'>
+      <div className={`w-full ${count !== 0 ? 'h-[600px]' : ''} flex flex-col gap-4 items-center justify-center`}>
       <categoriesContext.Provider value={{ categories, setCategories }}>
           {count === 0 && <CategoriesForm onSaveData />}
       </categoriesContext.Provider>
@@ -90,7 +110,7 @@ export default function Categories() {
       
       <div className="flex gap-4 items-center">
         <Button 
-          disabled={count <= 0}
+          isDisabled={count <= 0}
           color="primary" 
           variant="bordered" 
           endContent={<FontAwesomeIcon icon={faCircleLeft} />} 
@@ -99,7 +119,7 @@ export default function Categories() {
         </Button>    
         
         <Button 
-          disabled={count >= 3}
+          isDisabled={count >= 2}
           color="primary" 
           startContent={<FontAwesomeIcon icon={faCircleRight} />} 
           onClick={() => handleCount('next')}>

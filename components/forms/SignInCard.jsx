@@ -16,7 +16,6 @@ export const SignInCard = ({service,imgSrc}) => {
                 // const data = await response.json(); // Parse the response
                 const data = await response.text(); // Get the response data as a string
                 setResponseData(data); // Store the response data
-                console.log('data: ',data);
                 window.location.href = data;
             } else {
                 throw new Error('Failed to fetch data');
