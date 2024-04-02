@@ -9,9 +9,8 @@ import { faCircleLeft } from '@fortawesome/free-regular-svg-icons'
 import { categoriesContext } from '@/logic/context/categoriesContext';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-import { PushCategoriesData } from '@/logic/firebaseUtils';
 import { useRouter } from 'next/router';
-import { saveCategoties, saveCode } from '@/logic/authenticationUtils';
+import { saveCode } from '@/logic/authenticationUtils';
 import { modifyPath } from '@/logic/redirectionUtils';
 import { createUserData } from '@/ajax/createUserData';
 
@@ -100,7 +99,7 @@ export default function Categories() {
 
   return (
     <div className="min-h-screen flex flex-col gap-4 items-center justify-center">
-      <div className={`w-full ${count !== 0 ? 'h-[600px]' : ''} flex flex-col gap-4 items-center justify-center`}>
+      <div className={`w-full ${count !== 0 ? 'h-[600px] overflow-y-auto' : ''} flex flex-col gap-4 items-center justify-center`}>
       <categoriesContext.Provider value={{ categories, setCategories }}>
           {count === 0 && <CategoriesForm onSaveData />}
       </categoriesContext.Provider>

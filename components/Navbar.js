@@ -9,7 +9,7 @@ export default function NavBar() {
   ];
 
   return (
-    <Navbar disableAnimation isBordered>
+    <Navbar isBordered>
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle />
       </NavbarContent>
