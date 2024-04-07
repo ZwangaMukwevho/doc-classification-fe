@@ -41,7 +41,7 @@ import axios from "axios";
 // }
 
 async function createUserData( categories ) {
-    const url = 'http://localhost:8080/user/create';
+    const url = 'https://doc-classification.co.za/classification/user/create';
     const gmailCode = getAuthCodeFromStorage('gmail');
     const gdriveCode = getAuthCodeFromStorage('gdrive');
     const userid = generateUniqueId();
