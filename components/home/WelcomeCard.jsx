@@ -13,9 +13,9 @@ export const WelcomeCard = () => {
           <Image
             alt="Woman listening to music"
             className="object-cover"
-            height={200}
-            src="/images/hero-card.jpeg"
-            width={200}
+            // height={200}
+            src='../../../images/documents_card.png'
+            // width={200}
           />
       <CardFooter className="before:bg-white/10 border-white/20 border-1 overflow-hidden absolute before:rounded-xl rounded-large bottom-2 left-3 right-3 mx-auto w-75 shadow-small z-10 flex flex-row justify-space-evenly items-center text-center">
         <p className="text-tiny text-white/80 mr-3">Welcome to Document Classify.</p>

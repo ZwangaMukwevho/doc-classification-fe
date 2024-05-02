@@ -22,6 +22,7 @@ export default function Categories() {
 
   const MySwal = withReactContent(Swal);
   const [count, setCount] = useState(0);
+  const [next, setNextView] = useState('next');
   const [categories, setCategories] = useState(
       [
         {category: 'Education', description: 'This category can include documents related to educational pursuits, such as school transcripts, certificates, course materials, and research papers'},
@@ -46,42 +47,50 @@ export default function Categories() {
         return
       }
 
+      if (count === 2) {
+        submitData();
+        return
+      }
+
       if(movement === 'next'){
         setCount(count + 1);
         router.push(modifyPath(currentUrl,'next'));
-      } 
-      else if(movement === 'back' && count > 0){
+        return
+      }
+      
+      if(movement === 'back' && count > 0){
         setCount(count - 1);
         router.push(modifyPath(currentUrl,'back'));
       }
   };
 
-  useEffect(() => {
-    if (count === 3) {
-      // Trigger SweetAlert when count reaches 3
-      createUserData(categories)
-      .then(() => {
-        MySwal.fire({
-          title: 'Submitted!',
-          text: 'You have completed the document classification journey.',
-          icon: 'success',     
-        }).then(() => {
-          // setCount(0);
-          // router.push('/categories/0/null');
-        })
+  const submitData = () => {
+    createUserData(categories)
+    .then(() => {
+      MySwal.fire({
+        title: 'Submitted!',
+        text: 'You have completed the document classification journey.',
+        icon: 'success',     
+      }).then(() => {
+        router.push('/');
       })
-      .catch(()=> {
-        MySwal.fire({
-          title: 'Failure!',
-          text: 'An error occured while submitting the data.',
-          icon: 'error',
-        }).then(() => {
-          // setCount(0);
-          // router.push('/categories/0/null');
-        });
+    })
+    .catch(()=> {
+      MySwal.fire({
+        title: 'Failure!',
+        text: 'An error occured while submitting your form.',
+        icon: 'error',
+      }).then(() => {
+        router.push('/categories/0/null');
       });
-      
-      setCategories(Array(7).fill(''));
+    });
+  }
+
+  useEffect(() => {
+    if (count === 2) {
+      setNextView('Sumbit');
+    } else {
+      setNextView('Next');
     }
 
     if (slug && Array.isArray(slug) && slug.length > 0) {
@@ -118,11 +127,11 @@ export default function Categories() {
         </Button>    
         
         <Button 
-          isDisabled={count >= 2}
+          isDisabled={count >= 3}
           color="primary" 
           startContent={<FontAwesomeIcon icon={faCircleRight} />} 
           onClick={() => handleCount('next')}>
-          Next
+          { next }
         </Button>
       </div>
     </div>

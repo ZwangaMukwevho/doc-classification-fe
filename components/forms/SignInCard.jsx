@@ -10,7 +10,8 @@ export const SignInCard = ({service,imgSrc}) => {
     const handleClick = async () => {
         try {
             setIsLoading(true); // Set loading state to true
-            const url = service == "Gmail" ? "/classification/gmail" : "/classification/gdrive"
+            const url = service == "Gmail" ? "https://doc-classification.co.za/classification/gmail" : "https://doc-classification.co.za/classification/gdrive"
+            //const url = service == "Gmail" ? "http://localhost:8080/gmail" : "http://localhost:8080/gdrive"
             const response = await fetch(url); // Make the API request
             if (response.ok) {
                 // const data = await response.json(); // Parse the response

@@ -20,13 +20,18 @@ export function saveCode(count, slugs, categories) {
     const authCode = getAuthTokenFromSlugs(slugs);
 
     switch(count) {
+        case 0:
+                setItemToStorage('categories',categories)
+                return
         case 1:
-            setItemToStorage('categories',categories)
-        case 2:
-            setItemToStorage('gmail',authCode)
+            if(authCode != 'null') {
+                setItemToStorage('gmail',authCode)
+            }
             return;
-        case 3:
-            setItemToStorage('gdrive',authCode)
+        case 2:
+            if(authCode != 'null') {
+                setItemToStorage('gdrive',authCode)
+            }
             return
         default:
             return
@@ -46,9 +51,9 @@ export function getAuthSourceIndex(url){
     
     switch(lastElement){
         case 'gmail.readonly':
-            return 2
+            return 1
         case 'drive':
-            return 3
+            return 2
         default:
             return 0
     }
