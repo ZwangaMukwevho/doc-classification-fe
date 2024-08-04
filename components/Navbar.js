@@ -31,6 +31,16 @@ export default function NavBar() {
             Home
           </Link>
         </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/instructions">
+            How it works
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/instructions">
+            Instructions
+          </Link>
+        </NavbarItem>
       </NavbarContent>
       
       <NavbarMenu>

@@ -34,7 +34,7 @@ export const CategoriesForm = () => {
                 placeholder=""
                 value={categories[index]['category']}
                 onChange={(e) => handleInputChange(index,'category', e.target.value)}
-                className="sm:w-2/5 lg:w-1/5" 
+                className="sm:w-3/10 lg:w-1/5" 
               />
               <Textarea
                 type="email"
@@ -46,7 +46,7 @@ export const CategoriesForm = () => {
                 minRows={4}
                 value={categories[index]['description']}
                 onChange={(e) => handleInputChange(index, 'description', e.target.value)}
-                className="sm:w-3/5 lg:w-4/5" 
+                className="sm:w-7/10 lg:w-4/5" 
               />
             </div>
           </TableCell>
