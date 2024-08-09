@@ -48,7 +48,7 @@ export default function Instructions() {
                             <Image
                                 alt="Card background"
                                 className="object-cover sm:h-96 h-64 rounded-xl"
-                                src='../../../images/iPhone_15_Pro_sign_up.png'
+                                src='../../../images/iPhone_15_pro_sign_up.png'
                             />
                         </CardBody>
                         <CardHeader className="pb-0 pt-2 px-4 flex-col justify-center items-start w-5/10 text-right">
@@ -72,7 +72,7 @@ export default function Instructions() {
                             <Image
                                 alt="Card background"
                                 className="object-cover sm:h-96 h-64 rounded-xl"
-                                src='../../../images/iphone_15_pro_Submit.png'
+                                src='../../../images/iPhone_15_Pro_Submit.png'
                             />
                         </CardBody>
                     </div>
