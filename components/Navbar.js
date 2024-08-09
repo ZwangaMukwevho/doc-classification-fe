@@ -67,13 +67,14 @@ export default function NavBar() {
               color={
                 index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
               }
-              href="#"
+              href={item.path}
               size="lg"
             >
               {item.name}
             </Link>
           </NavbarMenuItem>
         ))}
+        <InstructionsModal></InstructionsModal>
       </NavbarMenu>
     </Navbar>
   );
