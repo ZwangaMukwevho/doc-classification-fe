@@ -12,7 +12,8 @@ export default function NavBar() {
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "Instructions", path: "/instructions" },
-    { name: "Set up", path: "/categories/0/null" }
+    { name: "Set up", path: "/categories/0/null" },
+    { name: "Privacy Policy", path: "/policy" }
   ];
   const isActive = (path) => pathname === path || (path === '/categories/0/null' && pathname.includes('categories'));
 
