@@ -8,7 +8,7 @@ export default function Policy() {
         <div className="max-w-4xl mx-auto bg-default-100 p-6 rounded-lg shadow-lg">
 
           <h1 className="text-2xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-sm text-defaut-200 mb-4">Last updated: August 13, 2024</p>
+          <p className="text-sm text-default-200 mb-4">Last updated: August 13, 2024</p>
           <p className="mb-4">This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
           <p className="mb-4">
             We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.
@@ -28,10 +28,10 @@ export default function Policy() {
               <strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.
             </li>
             <li className="mb-2">
-              <strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
+              <strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where -&quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
             </li>
             <li className="mb-2">
-              <strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Doc-Classification.
+              <strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Doc-Classification.
             </li>
             <li className="mb-2">
               <strong>Cookies</strong> are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.
@@ -87,7 +87,7 @@ export default function Policy() {
             Usage Data is collected automatically when using the Service.
           </p>
           <p className="mb-4">
-            Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
+            Usage Data may include information such as Your Device&apos;s Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
           </p>
           <p className="mb-4">
             When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.
@@ -109,7 +109,7 @@ export default function Policy() {
             </li>
           </ul>
           <p className="mb-4">
-            Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. You can learn more about cookies on&nbsp;
+            Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. You can learn more about cookies on&nbsp;
             <a href="https://www.termsfeed.com/blog/cookies/#What_Are_Cookies" target="_blank" className="text-blue-600 underline">TermsFeed website</a>
             &nbsp;article.
           </p>
@@ -155,7 +155,7 @@ export default function Policy() {
               <strong>For the performance of a contract:</strong> the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.
             </li>
             <li className="mb-2">
-              <><strong>To contact You:</strong> To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</>
+              <><strong>To contact You:</strong> To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application&apos;s push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</>
             </li>
             <li className="mb-2">
               <><strong>To provide You</strong> with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.</>
@@ -185,7 +185,7 @@ export default function Policy() {
           <p className="mb-4">The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.</p>
 
           <h3 className="text-lg font-semibold mb-2">Transfer of Your Personal Data</h3>
-          <p className="mb-4">Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.</p>
+          <p className="mb-4">Your information, including Personal Data, is processed at the Company&apos;s operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.</p>
           <p className="mb-4">Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.</p>
           <p className="mb-4">The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.</p>
 
@@ -214,17 +214,17 @@ export default function Policy() {
           <h3 className="text-lg font-semibold mb-2">Security of Your Personal Data</h3>
           <p className="mb-4">The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
 
-          <h2 className="text-xl font-semibold mt-8 mb-4">Children's Privacy</h2>
+          <h2 className="text-xl font-semibold mt-8 mb-4">Children&apos;s Privacy</h2>
           <p className="mb-4">Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
-          <p className="mb-4">If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</p>
+          <p className="mb-4">If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent&apos;s consent before We collect and use that information.</p>
 
           <h2 className="text-xl font-semibold mt-8 mb-4">Links to Other Websites</h2>
-          <p className="mb-4">Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
+          <p className="mb-4">Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party&apos;s site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
           <p className="mb-4">We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
 
           <h2 className="text-xl font-semibold mt-8 mb-4">Changes to this Privacy Policy</h2>
           <p className="mb-4">We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
-          <p className="mb-4">We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.</p>
+          <p className="mb-4">We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the &quot;Last updated&quot; date at the top of this Privacy Policy.</p>
           <p className="mb-4">You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
 
           <h2 className="text-xl font-semibold mt-8 mb-4">Contact Us</h2>
