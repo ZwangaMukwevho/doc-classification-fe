@@ -52,7 +52,7 @@ export function getAuthSourceIndex(url){
     switch(lastElement){
         case 'gmail.readonly':
             return 1
-        case 'drive':
+        case 'drive.file':
             return 2
         default:
             return 0
