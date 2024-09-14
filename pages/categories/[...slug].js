@@ -13,6 +13,7 @@ import { useRouter } from 'next/router';
 import { saveCode } from '@/logic/authenticationUtils';
 import { modifyPath } from '@/logic/redirectionUtils';
 import { createUserData } from '@/ajax/createUserData';
+import {Skeleton} from "@nextui-org/skeleton";
 
 export default function Categories() {
 
@@ -23,6 +24,7 @@ export default function Categories() {
   const MySwal = withReactContent(Swal);
   const [count, setCount] = useState(0);
   const [next, setNextView] = useState('next');
+  const [isLoaded, setIsLoaded] = useState(false);
   const [categories, setCategories] = useState(
     [
       { category: 'Education', description: 'This category can include documents related to educational pursuits, such as school transcripts, certificates, course materials, and research papers' },
@@ -104,20 +106,22 @@ export default function Categories() {
         }
       }
       saveCode(parsedCount, slug, categories);
+      setIsLoaded(true);
     }
 
   }, [slug]);
 
   return (
     <div className="min-h-screen flex flex-col gap-4 items-center justify-center">
-      <div className={`w-full ${count !== 0 ? 'h-[600px] overflow-y-auto' : ''} flex flex-col gap-4 items-center justify-center`}>
+    <Skeleton isLoaded={isLoaded}  className="rounded-lg w-full">
+    <div className={`w-full ${count !== 0 ? 'h-[600px] overflow-y-auto' : ''} flex flex-col gap-4 items-center justify-center`}>
         <categoriesContext.Provider value={{ categories, setCategories }}>
           {count === 0 && <CategoriesForm onSaveData />}
         </categoriesContext.Provider>
         {count === 1 && <SignInCard service={'Gmail'} imgSrc={'../../../images/gmail_banner.jpg'} />}
         {count === 2 && <SignInCard service={'Google drive'} imgSrc={'../../../images/google_drive.jpg'} />}
       </div>
-
+    </Skeleton>
       <div className="flex gap-4 items-center">
         <Button
           isDisabled={count <= 0}
