@@ -49,7 +49,7 @@ export default function Categories() {
       return
     }
 
-    if (count === 2 && next === 'submit') {
+    if (count >= 1 && next === 'Submit') {
       submitData();
       return
     }
@@ -95,7 +95,6 @@ export default function Categories() {
       if (!isNaN(parsedCount)) {
         if (parsedCount !== count) {
           // Only set the count if it is different from the current count
-          console.log('Setting count on slug:', parsedCount);
           setCount(parsedCount);
         }
 
