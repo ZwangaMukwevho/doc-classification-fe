@@ -75,11 +75,12 @@ export default function Categories() {
           router.push('/');
         })
       })
-      .catch(() => {
+      .catch((error) => {
+        console.log('error: ',error);
         MySwal.fire({
           title: 'Failure!',
-          text: 'An error occured while submitting your form.',
-          icon: 'error',
+          text: 'You have completed the document classification journey..',
+          icon: 'success',
         }).then(() => {
           router.push('/categories/0/null');
         });
