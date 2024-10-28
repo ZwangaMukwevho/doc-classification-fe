@@ -43,13 +43,13 @@ export default function NavBar() {
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
           <AcmeLogo />
-          <p className="font-bold text-inherit">Doc-Classify</p>
+          <p className="font-bold text-inherit">Doc-Classification</p>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand>
           <AcmeLogo />
-          <p className="font-bold text-inherit">Doc-Classify</p>
+          <p className="font-bold text-inherit">Doc-Classification</p>
         </NavbarBrand>
         {menuItems.map((item, index) => (
           <NavbarItem key={index} isActive={isActive(item.path)}>

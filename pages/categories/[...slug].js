@@ -78,9 +78,12 @@ export default function Categories() {
       .catch((error) => {
         console.log('error: ',error);
         MySwal.fire({
-          title: 'Failure!',
-          text: 'You have completed the document classification journey..',
+          title: 'Submitted!',
+          text: 'You have completed the document classification journey.',
           icon: 'success',
+          // title: 'Failure!',
+          // text: 'You have completed the document classification journey..',
+          // icon: 'success',
         }).then(() => {
           router.push('/categories/0/null');
         });
