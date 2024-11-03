@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { PageTransition } from 'next-page-transitions';
 import { useRouter } from 'next/router';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, noMargin }) => {
   const router = useRouter();
 
   const transitionStyles = {
@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
       >
         <div className="dark text-foreground bg-background">
           <NavBar />
-          <div className="ms:mx-3 sm:mx-3 md:mx-10 lg:mx-40 xl:mx-40">
+          <div className={`${noMargin ? "" : "ms:mx-3 sm:mx-3 md:mx-10 lg:mx-40 xl:mx-40"}`}>
             {children}
           </div>
         </div>

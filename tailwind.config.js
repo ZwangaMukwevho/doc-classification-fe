@@ -28,6 +28,9 @@ module.exports = {
         '7/10': '70%',
         '6/10': '60%',
         '4/10': '40%',
+      },
+      animation: {
+        'slow-bounce': 'bounce 6s infinite', // Slower bounce with 3s duration
       }
     },
   },

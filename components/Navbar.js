@@ -1,9 +1,7 @@
 import React from "react";
 import {Navbar, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter ,useDisclosure} from "@nextui-org/react";
 import {AcmeLogo} from "./AcmeLogo.js";
 import { useRouter } from 'next/router';
-import { useState } from "react";
 import InstructionsModal from "./instructions/modal.jsx";
 
 export default function NavBar() {
