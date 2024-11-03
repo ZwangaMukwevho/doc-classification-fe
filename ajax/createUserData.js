@@ -66,3 +66,4 @@ async function createUserData( categories ) {
 }
 
 export { createUserData };
+

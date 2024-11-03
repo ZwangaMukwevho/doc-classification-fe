@@ -1,9 +1,7 @@
 import React from "react";
 import {Navbar, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter ,useDisclosure} from "@nextui-org/react";
 import {AcmeLogo} from "./AcmeLogo.js";
 import { useRouter } from 'next/router';
-import { useState } from "react";
 import InstructionsModal from "./instructions/modal.jsx";
 
 export default function NavBar() {
@@ -43,13 +41,13 @@ export default function NavBar() {
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
           <AcmeLogo />
-          <p className="font-bold text-inherit">Doc-Classify</p>
+          <p className="font-bold text-inherit">Doc-Classification</p>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand>
           <AcmeLogo />
-          <p className="font-bold text-inherit">Doc-Classify</p>
+          <p className="font-bold text-inherit">Doc-Classification</p>
         </NavbarBrand>
         {menuItems.map((item, index) => (
           <NavbarItem key={index} isActive={isActive(item.path)}>
