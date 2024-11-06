@@ -41,8 +41,8 @@ import axios from "axios";
 // }
 
 async function createUserData( categories ) {
-    // const url = 'https://doc-classification.co.za/classification/user/create';
-    const url = 'http://localhost:8000/user/create';
+     const url = 'https://doc-classification.co.za/classification/user/create';
+    //const url = 'http://localhost:8080/user/create';
     const gmailCode = getAuthCodeFromStorage('gmail');
     const gdriveCode = getAuthCodeFromStorage('gdrive');
     const userid = generateUniqueId();
@@ -66,3 +66,4 @@ async function createUserData( categories ) {
 }
 
 export { createUserData };
+
