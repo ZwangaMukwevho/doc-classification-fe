@@ -1,7 +1,6 @@
 import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import HomeAnimatedIcon from "../helper/homeAnimatedIcon";
+import Link from "next/link";
 
 export const DescriptiveCard = () => {
   return (
@@ -24,9 +23,11 @@ export const DescriptiveCard = () => {
           </p>
 
           <div className="flex justify-center lg:justify-start">
+            <Link href="/categories/0/null">
             <button className="mt-4 w-[120px] rounded bg-[#da4ea2] px-4 py-2 text-white font-medium">
               Get Started
             </button>
+            </Link>
           </div>
         </div>
 

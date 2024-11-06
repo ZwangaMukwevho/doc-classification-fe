@@ -2,6 +2,7 @@
 
 import React, { Suspense } from "react";
 import HomeAnimatedIcon from "../helper/homeAnimatedIcon";
+import Link from "next/link";
 
 const Who = () => {
     return (
@@ -23,9 +24,12 @@ const Who = () => {
                     <p className="text-lg md:text-2xl text-gray-300">
                         Creators of AI-driven tools that automate and organize, turning Gmail attachments into neatly categorized Google Drive folders—effortlessly and securely.
                     </p>
-                    <button className="bg-pink-500 text-white font-medium w-[120px] py-2 rounded-lg">
-                        See our works
-                    </button>
+                    <Link href="/categories/0/null">
+                        <button className="bg-pink-500 text-white font-medium w-[120px] py-2 rounded-lg">
+                            See our works
+                        </button>
+                    </Link>
+                    
                 </div>
 
             </div>
