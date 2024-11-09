@@ -14,7 +14,7 @@ export default function InstructionsModal () {
 
   return (
     <>
-      <Button onPress={onOpen}>How it works</Button>
+      <Button className="bg-primary flex rounded w-1/3" onPress={onOpen}>How it works</Button>
       <Modal
         backdrop={'blur'}
         isOpen={isOpen}

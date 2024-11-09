@@ -2,7 +2,7 @@
 
 import React, { Suspense } from "react";
 import HomeAnimatedIcon from "../helper/homeAnimatedIcon";
-import Link from "next/link";
+import InstructionsModal from "../instructions/modal";
 
 const Who = () => {
     return (
@@ -19,17 +19,12 @@ const Who = () => {
                     </h1>
                     <div className="flex items-center gap-3 justify-center md:justify-start">
                         <img src="../../../images/home_logo_cropped.png" alt="line" className="h-[5px]" />
-                        <h2 className="text-pink-500">Who we Are</h2>
+                        <h2 className="text-primary text-[20px] lg:text-[24px]">Who we Are</h2>
                     </div>
-                    <p className="text-lg md:text-2xl text-gray-300">
+                    <p className="text-lg md:text-2xl text-gray-400">
                         Creators of AI-driven tools that automate and organize, turning Gmail attachments into neatly categorized Google Drive folders—effortlessly and securely.
                     </p>
-                    <Link href="/categories/0/null">
-                        <button className="bg-pink-500 text-white font-medium w-[120px] py-2 rounded-lg">
-                            See our works
-                        </button>
-                    </Link>
-                    
+                    <InstructionsModal></InstructionsModal>
                 </div>
 
             </div>

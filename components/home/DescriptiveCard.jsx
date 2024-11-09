@@ -15,7 +15,7 @@ export const DescriptiveCard = () => {
 
           <div className="flex items-center gap-2 justify-center lg:justify-start">
             <img src="../../../images/home_logo_cropped.png" alt="line" className="h-[5px]" />
-            <h2 className="text-[#da4ea2] text-[20px] lg:text-[24px]">What We Do</h2>
+            <h2 className="text-primary text-[20px] lg:text-[24px]">What We Do</h2>
           </div>
 
           <p className="text-[18px] lg:text-[24px] text-gray-400 text-center lg:text-left md:px-10 lg:px-0">
@@ -24,7 +24,7 @@ export const DescriptiveCard = () => {
 
           <div className="flex justify-center lg:justify-start">
             <Link href="/categories/0/null">
-            <button className="mt-4 w-[120px] rounded bg-[#da4ea2] px-4 py-2 text-white font-medium">
+            <button className="mt-4 w-[120px] rounded bg-primary px-4 py-2 text-white font-medium">
               Get Started
             </button>
             </Link>
