@@ -6,7 +6,7 @@ export const DescriptiveCard = () => {
   return (
     <div className="h-screen flex flex-col items-center justify-between snap-center lg:h-[100vh] md:h-[200vh]">
 
-      <div className="flex flex-col lg:flex-row h-full w-full max-w-[1400px] justify-between items-center lg:items-stretch">
+     <div className="flex flex-col lg:flex-row h-full w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 justify-between items-center lg:items-stretch">
         {/* Left Section */}
         <div className="flex flex-col justify-center gap-5 p-5 lg:p-10 lg:flex-1 lg:items-start md:items-center lg:justify-center">
           <h1 className="text-[48px] md:text-[64px] lg:text-[74px] text-center lg:text-left">
