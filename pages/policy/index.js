@@ -96,8 +96,8 @@ export default function Policy() {
           <h4 className="text-md font-semibold mb-2">Confirmation on Usage of Google Workspace APIs</h4>
           <p className="mb-4">
             We would like to take this opportunity to assure all of our users that we do not use data obtained from Google Workspace APIs to develop, improve or train generalized AI and/or Machine Learning (ML) models.
-            All data collected through Google Workspace APIs is utilized solely for the explicit purposes outlined within our 'Use of Your Personal Data' section of our Privacy Policy. We adhere to strict privacy standards, and the usage of Google Workspace APIs conforms to these standards, prioritizing user privacy and data security.
-            We ensure that any alteration in our data usage practices will be updated within our privacy policy and pertinent users will be notified as stated in our 'Changes to This Privacy Policy' section. If anyone has any concerns or queries regarding how we handle data, or our privacy policy in general, please get in touch with us utilizing the contact information provided in our 'Contact Us' section.
+            All data collected through Google Workspace APIs is utilized solely for the explicit purposes outlined within our &apos;Use of Your Personal Data&apos; section of our Privacy Policy. We adhere to strict privacy standards, and the usage of Google Workspace APIs conforms to these standards, prioritizing user privacy and data security.
+            We ensure that any alteration in our data usage practices will be updated within our privacy policy and pertinent users will be notified as stated in our &apos;Changes to This Privacy Policy&apos;section. If anyone has any concerns or queries regarding how we handle data, or our privacy policy in general, please get in touch with us utilizing the contact information provided in our &apos;Contact Us&apos; section.
           </p>
 
           <h4 className="text-md font-semibold mb-2">Tracking Technologies and Cookies</h4>
