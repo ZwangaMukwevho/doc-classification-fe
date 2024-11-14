@@ -7,10 +7,10 @@ import InstructionsModal from "../instructions/modal";
 const Who = () => {
     return (
         <section className="h-screen snap-center flex justify-center items-center">
-            <div className="flex flex-col lg:flex-row h-full w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 justify-between items-center lg:items-stretch">
+            <div className="flex flex-col lg:flex-row md:h-full w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 justify-between items-center lg:items-stretch">
 
                 {/* Left Section with Canvas */}
-                <HomeAnimatedIcon className="hidden md:block" />
+                <div className="hidden md:block"><HomeAnimatedIcon /></div>
 
                 {/* Right Section with Text and Button */}
                 <div className="flex flex-col justify-center gap-5 p-5 lg:p-10 lg:flex-1 lg:items-start md:items-center lg:justify-center">
