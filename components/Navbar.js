@@ -11,7 +11,8 @@ export default function NavBar() {
     { name: "Home", path: "/" },
     { name: "Instructions", path: "/instructions" },
     { name: "Set up", path: "/categories/0/null" },
-    { name: "Privacy Policy", path: "/policy" }
+    { name: "Privacy Policy", path: "/policy" },
+    { name: "Active users", path: "/users"}
   ];
   const isActive = (path) => pathname === path || (path === '/categories/0/null' && pathname.includes('categories'));
 
