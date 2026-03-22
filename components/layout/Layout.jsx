@@ -45,7 +45,7 @@ const Layout = ({ children, noMargin }) => {
         variants={transitionStyles}
       >
         <div className="dark text-foreground bg-background">
-          <NavBar />
+          {/* <NavBar /> */}
           <div className={`${noMargin ? "" : "ms:mx-3 sm:mx-3 md:mx-10 lg:mx-40 xl:mx-40"}`}>
             {children}
           </div>
